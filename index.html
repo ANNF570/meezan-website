@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Meezan — ميزان | Islamic Personal Finance</title>
+    <meta name="description" content="The world's first complete Islamic finance ecosystem. Automatic Zakat, Sadaqah tracking, family hub, and Shariah-compliant budgeting." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- ░░░░░░░░░░░░ CURSOR ░░░░░░░░░░░░ -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursor-trail"></div>
+
+    <!-- ░░░░░░░░░░░░ 1. NAV ░░░░░░░░░░░░ -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+
+            <a href="#" class="nav-logo">
+                <svg class="nav-logo-svg" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="28" y="26" width="4" height="22" rx="2" fill="url(#gold1)"/>
+        <ellipse cx="30" cy="50" rx="13" ry="3.5" fill="url(#gold1)"/>
+        <circle cx="30" cy="10" r="3.5" fill="url(#gold1)"/>
+        <rect x="9" y="18" width="42" height="3" rx="1.5" fill="url(#gold1)"/>
+        <line x1="14" y1="21" x2="11" y2="33" stroke="#d4a017" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <ellipse cx="11" cy="35" rx="7.5" ry="2.8" fill="url(#gold1)"/>
+        <line x1="46" y1="21" x2="49" y2="29" stroke="#d4a017" stroke-width="1.2" stroke-dasharray="2 2"/>
+        <ellipse cx="49" cy="31" rx="7.5" ry="2.8" fill="url(#gold1)"/>
+        <defs>
+          <linearGradient id="gold1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f0c040"/>
+            <stop offset="100%" stop-color="#a07010"/>
+          </linearGradient>
+        </defs>
+      </svg>
+                <span class="nav-logo-name">MEEZAN</span>
+                <span class="nav-logo-ar">ميزان</span>
+            </a>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#islamic" class="nav-link">Islamic</a></li>
+                <li><a href="#screens" class="nav-link">Preview</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="https://meezan-final.vercel.app/" class="btn-nav">Get Started</a>
+                <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+            </div>
+
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+            <a href="#features">Features</a>
+            <a href="#islamic">Islamic Finance</a>
+            <a href="#screens">App Preview</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+            <a href="https://meezan-final.vercel.app/pages/login.html" class="mobile-menu-cta">Start Free — دخول</a>
+        </div>
+    </nav>
+
+    <!-- ░░░░░░░░░░░░ 2. HERO ░░░░░░░░░░░░ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="orb orb-gold"></div>
+            <div class="orb orb-teal"></div>
+            <div class="orb orb-fire"></div>
+            <div class="geo-pattern" id="geo-pattern"></div>
+            <canvas id="particle-canvas"></canvas>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge" data-reveal>
+                <span class="badge-dot"></span> The World's First Islamic Finance Ecosystem
+            </div>
+
+            <h1 class="hero-h1" data-reveal data-delay="100">
+                <span class="h1-top">Balance Your</span>
+                <span class="h1-bottom">Wealth &amp; Faith</span>
+            </h1>
+
+            <p class="hero-sub" data-reveal data-delay="200">
+                Meezan unifies income tracking, automatic Zakat calculation, Sadaqah logging, and family finance — all governed by Shariah-compliant principles.
+            </p>
+
+            <div class="hero-ayat" data-reveal data-delay="280">
+                <div class="ayat-arabic">وَأَنفِقُوا مِمَّا رَزَقْنَاكُم</div>
+                <div class="ayat-trans">"And spend from what We have provided for you" — Al-Baqarah 2:254</div>
+            </div>
+
+            <div class="hero-cta" data-reveal data-delay="360">
+                <a href="https://meezan-final.vercel.app/" class="btn-primary">
+                    <span>Start for Free</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="#screens" class="btn-ghost">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
+                    <span>Watch Demo</span>
+                </a>
+            </div>
+
+            <div class="hero-stats" data-reveal data-delay="440">
+                <div class="stat">
+                    <div class="stat-num" data-count="2.5" data-suffix="%">0%</div>
+                    <div class="stat-lbl">Auto Zakat</div>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat">
+                    <div class="stat-num" data-count="20" data-suffix="+">0+</div>
+                    <div class="stat-lbl">Languages</div>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat">
+                    <div class="stat-num" data-count="16" data-suffix="">0</div>
+                    <div class="stat-lbl">App Screens</div>
+                </div>
+                <div class="stat-sep"></div>
+                <div class="stat">
+                    <div class="stat-num">∞</div>
+                    <div class="stat-lbl">Family Members</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard mockup -->
+        <div class="hero-mockup" data-reveal data-delay="500">
+            <div class="mockup-chrome">
+                <div class="chrome-bar">
+                    <div class="chrome-dots">
+                        <span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span>
+                    </div>
+                    <div class="chrome-url">meezan-final.vercel.app/pages/dashboard.html</div>
+                </div>
+                <div class="mockup-body">
+                    <div class="mock-sidebar">
+                        <div class="msb-logo">⚖️</div>
+                        <nav class="msb-nav">
+                            <div class="msb-item msb-active">⚖️ Dashboard</div>
+                            <div class="msb-item">💰 Income</div>
+                            <div class="msb-item">📊 Expenses</div>
+                            <div class="msb-item">🕌 Zakat</div>
+                            <div class="msb-item">🤲 Sadaqah</div>
+                            <div class="msb-item">🌙 Ramadan</div>
+                            <div class="msb-item">👨‍👩‍👧 Family</div>
+                        </nav>
+                    </div>
+                    <div class="mock-main">
+                        <div class="mock-cards">
+                            <div class="mock-card mc-fire">
+                                <div class="mc-label">TOTAL SPENT</div>
+                                <div class="mc-value">₹49,222</div>
+                                <div class="mc-sub">This month</div>
+                            </div>
+                            <div class="mock-card mc-gold">
+                                <div class="mc-label">NET WORTH</div>
+                                <div class="mc-value">₹12,83,094</div>
+                                <div class="mc-sub">Income − Expenses + Assets</div>
+                            </div>
+                            <div class="mock-card mc-teal">
+                                <div class="mc-label">INCOME (MONTH)</div>
+                                <div class="mc-value">₹82,000</div>
+                                <div class="mc-sub">All sources</div>
+                            </div>
+                            <div class="mock-card mc-sky">
+                                <div class="mc-label">ZAKAT DUE</div>
+                                <div class="mc-value">₹21,993</div>
+                                <div class="mc-sub">2.5% on precious metals</div>
+                            </div>
+                        </div>
+                        <div class="mock-lower">
+                            <div class="mock-scale-widget">
+                                <div class="msw-title">YOUR BALANCE</div>
+                                <div class="mock-scale" id="mock-scale">
+                                    <div class="ms-pole"></div>
+                                    <div class="ms-beam" id="ms-beam">
+                                        <div class="ms-pan ms-pan-l" id="pan-l">
+                                            <div class="pan-label">🔥 Spent</div>
+                                        </div>
+                                        <div class="ms-pan ms-pan-r" id="pan-r">
+                                            <div class="pan-label">✨ Saved</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ms-status">Balanced — keep monitoring</div>
+                            </div>
+                            <div class="mock-zakat-widget">
+                                <div class="mzw-title">ZAKAT STATUS</div>
+                                <div class="mzw-ring">
+                                    <svg viewBox="0 0 72 72">
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="9"/>
+                  <circle cx="36" cy="36" r="28" fill="none" stroke="#00c2a8" stroke-width="9"
+                    stroke-dasharray="176 0" stroke-linecap="round" transform="rotate(-90 36 36)"
+                    class="ring-progress"/>
+                </svg>
+                                    <div class="mzw-pct">100%</div>
+                                </div>
+                                <div class="mzw-val">₹21,993</div>
+                                <div class="mzw-sub">Pay your Zakat</div>
+                                <div class="mzw-row"><span>Nisab met?</span><span style="color:#1abc9c">✓ Yes</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mockup-glow"></div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="scroll-track"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ TRUST BAR ░░░░░░░░░░░░ -->
+    <div class="trust-bar">
+        <div class="trust-inner">
+            <span class="trust-label">Powered by</span>
+            <div class="trust-items">
+                <div class="trust-item">🔥 Firebase</div>
+                <div class="trust-sep">·</div>
+                <div class="trust-item">🔐 Auth v9</div>
+                <div class="trust-sep">·</div>
+                <div class="trust-item">📦 Firestore</div>
+                <div class="trust-sep">·</div>
+                <div class="trust-item">📩 FCM</div>
+                <div class="trust-sep">·</div>
+                <div class="trust-item">📄 jsPDF</div>
+                <div class="trust-sep">·</div>
+                <div class="trust-item">🌍 i18n 20+</div>
+                <div class="trust-sep">·</div>
+                <div class="trust-item">🚀 Vercel</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ░░░░░░░░░░░░ 3. FEATURES ░░░░░░░░░░░░ -->
+    <section class="features" id="features">
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag">Core Features</div>
+                <h2 class="section-h2">Everything your household<br/><em>needs to thrive</em></h2>
+                <p class="section-p">A complete financial operating system — designed around Islamic obligations, not retrofitted for them.</p>
+            </div>
+
+            <div class="features-bento">
+                <!-- Large card 1 -->
+                <div class="feat-card feat-lg" data-reveal>
+                    <div class="feat-accent fa-gold"></div>
+                    <div class="feat-icon-wrap"><span class="feat-emoji">⚖️</span></div>
+                    <h3 class="feat-title">Automatic Zakat Calculator</h3>
+                    <p class="feat-desc">Link your income, savings, and assets — Meezan computes your exact Zakat obligation, tracks your Hawl year, and alerts you when it's due. Both gold and silver Nisab supported.</p>
+                    <div class="feat-formula">
+                        <span>Savings</span><span class="ff-op">→</span><span>+ Gold + Silver</span><span class="ff-op">→</span><span class="ff-result">× 2.5%</span>
+                    </div>
+                    <div class="feat-checks">
+                        <span>✓ Nisab threshold</span>
+                        <span>✓ Hawl tracking</span>
+                        <span>✓ Asset categories</span>
+                        <span>✓ Payment history</span>
+                    </div>
+                </div>
+
+                <!-- Small card 1 -->
+                <div class="feat-card feat-sm" data-reveal data-delay="60">
+                    <div class="feat-accent fa-teal"></div>
+                    <span class="feat-emoji">💰</span>
+                    <h3 class="feat-title">Income Tracking</h3>
+                    <p class="feat-desc">Log every halal earning — salary, freelance, rental, business, gifts. Monthly totals and category breakdown.</p>
+                </div>
+
+                <!-- Small card 2 -->
+                <div class="feat-card feat-sm" data-reveal data-delay="120">
+                    <div class="feat-accent fa-fire"></div>
+                    <span class="feat-emoji">📊</span>
+                    <h3 class="feat-title">Expense Control</h3>
+                    <p class="feat-desc">Track spending by category. Link expenses to income sources — know exactly which funds you're drawing from.</p>
+                </div>
+
+                <!-- Large card 2 -->
+                <div class="feat-card feat-lg feat-lg-r" data-reveal data-delay="80">
+                    <div class="feat-accent fa-sky"></div>
+                    <div class="feat-icon-wrap"><span class="feat-emoji">👨‍👩‍👧</span></div>
+                    <h3 class="feat-title">Family Hub & Groups</h3>
+                    <p class="feat-desc">Invite family members with role-based access (Owner / Member / View-only). Shared group expenses with real-time Splitwise-style settlement — perfect for Haj trips, household budgets, and community funds.</p>
+                    <div class="feat-roles">
+                        <div class="role-pill rp-owner">👑 Owner</div>
+                        <div class="role-pill rp-member">👤 Member</div>
+                        <div class="role-pill rp-view">👁 View-only</div>
+                    </div>
+                </div>
+
+                <!-- Small card 3 -->
+                <div class="feat-card feat-sm" data-reveal data-delay="100">
+                    <div class="feat-accent fa-teal"></div>
+                    <span class="feat-emoji">🤲</span>
+                    <h3 class="feat-title">Sadaqah Logger</h3>
+                    <p class="feat-desc">Record 13 types of voluntary charity — masjid, orphan, food, education, disaster relief, Zakat al-Fitr, and more.</p>
+                </div>
+
+                <!-- Small card 4 -->
+                <div class="feat-card feat-sm" data-reveal data-delay="160">
+                    <div class="feat-accent fa-gold"></div>
+                    <span class="feat-emoji">📈</span>
+                    <h3 class="feat-title">Reports & PDF Export</h3>
+                    <p class="feat-desc">Monthly trends, spending breakdowns, Zakat summaries. Export to PDF or Word — perfect for tax time or financial reviews.</p>
+                </div>
+
+                <!-- Small card 5 -->
+                <div class="feat-card feat-sm" data-reveal data-delay="140">
+                    <div class="feat-accent fa-sky"></div>
+                    <span class="feat-emoji">🔔</span>
+                    <h3 class="feat-title">13 Smart Alerts</h3>
+                    <p class="feat-desc">Zakat due, Hawl complete, Ramadan start, budget warnings, salary day. All tied to the Hijri calendar automatically.</p>
+                </div>
+
+                <!-- Small card 6 -->
+                <div class="feat-card feat-sm" data-reveal data-delay="200">
+                    <div class="feat-accent fa-fire"></div>
+                    <span class="feat-emoji">🌍</span>
+                    <h3 class="feat-title">20+ Languages</h3>
+                    <p class="feat-desc">Full RTL support for Arabic and Urdu. Seamlessly switch between English, Hindi, Tamil, Telugu, and 16 more languages.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ 4. ISLAMIC FINANCE ░░░░░░░░░░░░ -->
+    <section class="islamic" id="islamic">
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag" style="color:var(--teal-lt);border-color:rgba(0,194,168,.3);background:rgba(0,194,168,.08)">Islamic Finance</div>
+                <h2 class="section-h2">Shariah-first <em>by design</em></h2>
+                <p class="section-p">Every feature built around Islamic obligations — not a generic app with a Zakat calculator bolted on.</p>
+            </div>
+
+            <div class="islamic-grid">
+
+                <!-- BIG: Zakat card -->
+                <div class="isl-card isl-zakat" data-reveal>
+                    <div class="isl-card-glow"></div>
+                    <div class="isl-card-head">
+                        <span class="isl-icon">⚖️</span>
+                        <div>
+                            <div class="isl-name">Zakat Calculator</div>
+                            <div class="isl-tagline">Automatic. Accurate. Shariah-compliant.</div>
+                        </div>
+                    </div>
+                    <div class="zakat-flow">
+                        <div class="zf-node">Income − Expenses<br/><small>Monthly savings</small></div>
+                        <div class="zf-arrow">↓</div>
+                        <div class="zf-node">+ Gold &amp; Silver<br/><small>At live prices</small></div>
+                        <div class="zf-arrow">↓</div>
+                        <div class="zf-node">+ Cash &amp; Investments<br/><small>Debts deducted</small></div>
+                        <div class="zf-arrow">↓</div>
+                        <div class="zf-result">Zakat = 2.5% × Eligible Wealth</div>
+                    </div>
+                    <div class="zakat-checks">
+                        <div class="zk-row"><span class="zk-tick">✓</span>Nisab threshold (Gold 87.48g / Silver 612.36g)</div>
+                        <div class="zk-row"><span class="zk-tick">✓</span>Hawl (1 lunar year) countdown tracker</div>
+                        <div class="zk-row"><span class="zk-tick">✓</span>Excludes personal home &amp; daily essentials</div>
+                        <div class="zk-row"><span class="zk-tick">✓</span>Zakat payment log &amp; history</div>
+                    </div>
+                </div>
+
+                <div class="isl-right">
+
+                    <!-- Sadaqah -->
+                    <div class="isl-card isl-sadaqah" data-reveal data-delay="80">
+                        <div class="isl-card-head">
+                            <span class="isl-icon">🤲</span>
+                            <div class="isl-name">Sadaqah Log</div>
+                        </div>
+                        <p class="isl-desc">13 charity categories tracked — from Masjid donations to Zakat al-Fitr, orphan support, and disaster relief.</p>
+                        <div class="isl-verse">
+                            <div class="verse-ar">مَثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ</div>
+                            <div class="verse-ref">— Al-Baqarah 2:261</div>
+                        </div>
+                    </div>
+
+                    <!-- Ramadan -->
+                    <div class="isl-card isl-ramadan" data-reveal data-delay="140">
+                        <div class="isl-card-head">
+                            <span class="isl-icon">🌙</span>
+                            <div class="isl-name">Ramadan Mode</div>
+                        </div>
+                        <p class="isl-desc">Fasting tracker, Suhoor/Iftar times by city, Quran progress log, Laylat al-Qadr tracker, and Eid budgeting tools.</p>
+                        <div class="ramadan-dots">
+                            <span class="rd-dot rd-done" title="Day 1"></span>
+                            <span class="rd-dot rd-done" title="Day 2"></span>
+                            <span class="rd-dot rd-done" title="Day 3"></span>
+                            <span class="rd-dot rd-today" title="Today"></span>
+                            <span class="rd-dot" title="Day 5"></span>
+                            <span class="rd-dot" title="Day 6"></span>
+                            <span class="rd-dot" title="Day 7"></span>
+                        </div>
+                    </div>
+
+                    <!-- Calendar -->
+                    <div class="isl-card isl-calendar" data-reveal data-delay="200">
+                        <div class="isl-card-head">
+                            <span class="isl-icon">📅</span>
+                            <div class="isl-name">Dual Calendar</div>
+                        </div>
+                        <p class="isl-desc">Gregorian and Hijri dates side by side. All Islamic events automatically highlighted — Eid, Ramadan, Muharram.</p>
+                        <div class="dual-dates">
+                            <div class="dd-greg">
+                                <div class="dd-label">Gregorian</div>
+                                <div class="dd-val">17 April 2026</div>
+                            </div>
+                            <div class="dd-sym">⟷</div>
+                            <div class="dd-hijri">
+                                <div class="dd-label">Hijri</div>
+                                <div class="dd-val">19 Shawwāl 1447</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ 5. APP PREVIEW ░░░░░░░░░░░░ -->
+    <section class="screens" id="screens">
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag" style="color:var(--gold-lt);border-color:rgba(212,160,23,.3);background:rgba(212,160,23,.08)">App Preview</div>
+                <h2 class="section-h2">Beautiful on every<br/><em>screen size</em></h2>
+                <p class="section-p">16 fully-built pages. Responsive across desktop, tablet, and phone. Dark gold Islamic aesthetic throughout.</p>
+            </div>
+
+            <div class="screens-row">
+
+                <!-- Desktop mockup -->
+                <div class="screen-device sd-desktop" data-reveal>
+                    <div class="sdd-label">Desktop</div>
+                    <div class="sdd-frame">
+                        <div class="sdf-bar">
+                            <div class="sdf-dots"><span></span><span></span><span></span></div>
+                            <div class="sdf-url">meezan-final.vercel.app/pages/reports.html</div>
+                        </div>
+                        <div class="sdf-body">
+                            <div class="sdf-sb">
+                                <div style="font-size:9px;font-family:'Cinzel',serif;color:var(--gold-lt);letter-spacing:2px;padding:6px 0;text-align:center">⚖️ MEEZAN</div>
+                                <div class="sdf-nav-item sdf-active">Dashboard</div>
+                                <div class="sdf-nav-item">Income</div>
+                                <div class="sdf-nav-item">Expenses</div>
+                                <div class="sdf-nav-item" style="color:var(--gold-lt)">Reports</div>
+                                <div class="sdf-nav-item">Settings</div>
+                            </div>
+                            <div class="sdf-main">
+                                <div class="sdf-mcards">
+                                    <div class="sdf-mc" style="border-color:rgba(212,160,23,.2);background:rgba(212,160,23,.08)">
+                                        <div style="font-size:7px;color:#d4a017;letter-spacing:1px">TOTAL INCOME</div>
+                                        <div style="font-size:13px;font-weight:700;color:#fff;font-family:'Cinzel',serif">₹2,31,000</div>
+                                    </div>
+                                    <div class="sdf-mc" style="border-color:rgba(231,76,60,.2);background:rgba(231,76,60,.08)">
+                                        <div style="font-size:7px;color:#e74c3c;letter-spacing:1px">TOTAL EXPENSES</div>
+                                        <div style="font-size:13px;font-weight:700;color:#fff;font-family:'Cinzel',serif">₹1,14,122</div>
+                                    </div>
+                                    <div class="sdf-mc" style="border-color:rgba(26,188,156,.2);background:rgba(26,188,156,.08)">
+                                        <div style="font-size:7px;color:#1abc9c;letter-spacing:1px">SAVINGS RATE</div>
+                                        <div style="font-size:13px;font-weight:700;color:#fff;font-family:'Cinzel',serif">51%</div>
+                                    </div>
+                                </div>
+                                <div class="sdf-chart">
+                                    <div style="font-size:7px;color:rgba(255,255,255,.3);letter-spacing:1px;margin-bottom:5px">INCOME VS EXPENSES</div>
+                                    <div class="sdf-bars">
+                                        <div class="sdf-bar-grp">
+                                            <div class="sdf-bar" style="height:38px;background:#1abc9c"></div>
+                                            <div class="sdf-bar" style="height:22px;background:#e74c3c"></div>
+                                        </div>
+                                        <div class="sdf-bar-grp">
+                                            <div class="sdf-bar" style="height:50px;background:#1abc9c"></div>
+                                            <div class="sdf-bar" style="height:28px;background:#e74c3c"></div>
+                                        </div>
+                                        <div class="sdf-bar-grp">
+                                            <div class="sdf-bar" style="height:44px;background:#1abc9c"></div>
+                                            <div class="sdf-bar" style="height:31px;background:#e74c3c"></div>
+                                        </div>
+                                        <div class="sdf-bar-grp">
+                                            <div class="sdf-bar" style="height:60px;background:#1abc9c"></div>
+                                            <div class="sdf-bar" style="height:35px;background:#e74c3c"></div>
+                                        </div>
+                                        <div class="sdf-bar-grp">
+                                            <div class="sdf-bar" style="height:55px;background:#1abc9c"></div>
+                                            <div class="sdf-bar" style="height:40px;background:#e74c3c"></div>
+                                        </div>
+                                        <div class="sdf-bar-grp">
+                                            <div class="sdf-bar" style="height:65px;background:#d4a017"></div>
+                                            <div class="sdf-bar" style="height:42px;background:#e74c3c"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone mockup -->
+                <div class="screen-device sd-phone" data-reveal data-delay="120">
+                    <div class="sdd-label">Mobile</div>
+                    <div class="phone-frame">
+                        <div class="pf-notch"></div>
+                        <div class="pf-screen">
+                            <div class="pf-header">
+                                <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--gold-lt)">MEEZAN</span>
+                                <span style="font-size:12px">🔔</span>
+                            </div>
+                            <div class="pf-cards">
+                                <div class="pf-card" style="background:rgba(212,160,23,.12);border-color:rgba(212,160,23,.2)">
+                                    <div style="font-size:7px;color:#d4a017">INCOME</div>
+                                    <div style="font-size:14px;font-weight:700;font-family:'Cinzel',serif">₹82,000</div>
+                                </div>
+                                <div class="pf-card" style="background:rgba(231,76,60,.12);border-color:rgba(231,76,60,.2)">
+                                    <div style="font-size:7px;color:#e74c3c">SPENT</div>
+                                    <div style="font-size:14px;font-weight:700;font-family:'Cinzel',serif">₹49,222</div>
+                                </div>
+                            </div>
+                            <div class="pf-scale-area">
+                                <div style="font-size:7px;color:rgba(255,255,255,.35);letter-spacing:1px;margin-bottom:5px;text-align:center">YOUR BALANCE</div>
+                                <div class="pf-scale">
+                                    <div class="pfs-l">🔥 Spent</div>
+                                    <div class="pfs-bar"></div>
+                                    <div class="pfs-r">✨ Saved</div>
+                                </div>
+                                <div style="font-size:7px;color:#1abc9c;text-align:center;margin-top:5px">Balanced — keep monitoring</div>
+                            </div>
+                            <div class="pf-zakat">
+                                <div style="font-size:7px;color:rgba(255,255,255,.35);letter-spacing:1px">ZAKAT DUE</div>
+                                <div style="font-size:16px;font-weight:700;color:var(--gold-lt);font-family:'Cinzel',serif">₹21,993</div>
+                                <div style="font-size:7px;color:#1abc9c">✓ Nisab met · Hawl 100%</div>
+                            </div>
+                            <div class="pf-nav">
+                                <span>⚖️</span><span>💰</span><span>📊</span><span style="color:var(--gold-lt)">🕌</span><span>⚙️</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tablet mockup -->
+                <div class="screen-device sd-tablet" data-reveal data-delay="60">
+                    <div class="sdd-label">Tablet</div>
+                    <div class="tablet-frame">
+                        <div class="tf-screen">
+                            <div class="tf-header">
+                                <span style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:var(--gold-lt)">⚖️ MEEZAN</span>
+                                <span style="font-size:9px;color:var(--text-mid)">🕌 Zakat</span>
+                            </div>
+                            <div class="tf-body">
+                                <div class="tf-main-card">
+                                    <div style="font-size:8px;color:#d4a017;letter-spacing:1px">TOTAL ZAKAT DUE</div>
+                                    <div style="font-size:22px;font-weight:700;color:#f0c040;font-family:'Cinzel',serif">₹21,993</div>
+                                    <div style="font-size:8px;color:#1abc9c;margin-top:3px">✓ Nisab met · Hawl complete</div>
+                                    <div class="tf-items">
+                                        <div class="tfi-row"><span>Metal wealth</span><span>₹8,79,716</span></div>
+                                        <div class="tfi-row"><span>Nisab threshold</span><span>₹48,790</span></div>
+                                    </div>
+                                </div>
+                                <div class="tf-donut">
+                                    <svg viewBox="0 0 80 80" style="width:70px;height:70px">
+                  <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="10"/>
+                  <circle cx="40" cy="40" r="30" fill="none" stroke="#d4a017" stroke-width="10"
+                    stroke-dasharray="188 0" stroke-linecap="round" transform="rotate(-90 40 40)"/>
+                  <text x="40" y="44" text-anchor="middle" fill="#f0c040" font-size="12" font-weight="700" font-family="Cinzel,serif">100%</text>
+                </svg>
+                                    <div style="font-size:8px;color:var(--text-dim);margin-top:4px;text-align:center">Hawl</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="screens-pages" data-reveal>
+                <div class="sp-label">All 16 app screens:</div>
+                <div class="sp-pills">
+                    <span>Dashboard</span><span>Income</span><span>Expenses</span><span>Zakat</span>
+                    <span>Sadaqah</span><span>Ramadan</span><span>Family</span><span>Groups</span>
+                    <span>Reports</span><span>Notifications</span><span>Settings</span><span>Profile</span>
+                    <span>Login</span><span>Signup</span><span>Forgot</span><span>Export</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ 6. THEMES ░░░░░░░░░░░░ -->
+    <section class="themes" id="themes">
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag">Themes</div>
+                <h2 class="section-h2">Four worlds,<br/><em>one Meezan</em></h2>
+                <p class="section-p">Switch your entire visual experience with one tap. Every theme is meticulously crafted.</p>
+            </div>
+
+            <div class="themes-grid">
+                <div class="theme-card tc-active" id="tc-1" data-reveal>
+                    <div class="tc-preview tp-darkgold">
+                        <div class="tp-bar">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="tp-content">
+                            <div class="tp-sidebar">
+                                <div class="tps-item tps-active"></div>
+                                <div class="tps-item"></div>
+                                <div class="tps-item"></div>
+                            </div>
+                            <div class="tp-main">
+                                <div class="tp-card" style="border-color:rgba(212,160,23,.3);background:rgba(212,160,23,.1)"></div>
+                                <div class="tp-card" style="border-color:rgba(26,188,156,.3);background:rgba(26,188,156,.1)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tc-info">
+                        <div class="tc-name">Dark Gold</div>
+                        <div class="tc-desc">Deep navy · Gold accents · Default</div>
+                        <div class="tc-swatches">
+                            <span style="background:#08090d"></span>
+                            <span style="background:#d4a017"></span>
+                            <span style="background:#00c2a8"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-card" id="tc-2" data-reveal data-delay="80">
+                    <div class="tc-preview tp-emerald">
+                        <div class="tp-bar"><span></span><span></span><span></span></div>
+                        <div class="tp-content">
+                            <div class="tp-sidebar">
+                                <div class="tps-item tps-active" style="background:rgba(46,204,113,.2);border-color:rgba(46,204,113,.4)"></div>
+                                <div class="tps-item"></div>
+                                <div class="tps-item"></div>
+                            </div>
+                            <div class="tp-main">
+                                <div class="tp-card" style="border-color:rgba(46,204,113,.3);background:rgba(46,204,113,.1)"></div>
+                                <div class="tp-card" style="border-color:rgba(46,204,113,.2);background:rgba(46,204,113,.06)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tc-info">
+                        <div class="tc-name">Emerald Dusk</div>
+                        <div class="tc-desc">Dark forest · Emerald accents</div>
+                        <div class="tc-swatches">
+                            <span style="background:#050e0a"></span>
+                            <span style="background:#2ecc71"></span>
+                            <span style="background:#1abc9c"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-card" id="tc-3" data-reveal data-delay="160">
+                    <div class="tc-preview tp-desert">
+                        <div class="tp-bar"><span></span><span></span><span></span></div>
+                        <div class="tp-content">
+                            <div class="tp-sidebar">
+                                <div class="tps-item tps-active" style="background:rgba(232,168,56,.2);border-color:rgba(232,168,56,.4)"></div>
+                                <div class="tps-item"></div>
+                                <div class="tps-item"></div>
+                            </div>
+                            <div class="tp-main">
+                                <div class="tp-card" style="border-color:rgba(232,168,56,.3);background:rgba(232,168,56,.1)"></div>
+                                <div class="tp-card" style="border-color:rgba(232,168,56,.2);background:rgba(232,168,56,.06)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tc-info">
+                        <div class="tc-name">Desert Sand</div>
+                        <div class="tc-desc">Warm dusk · Amber accents</div>
+                        <div class="tc-swatches">
+                            <span style="background:#0e0a06"></span>
+                            <span style="background:#e8a838"></span>
+                            <span style="background:#c0803a"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-card" id="tc-4" data-reveal data-delay="240">
+                    <div class="tc-preview tp-sapphire">
+                        <div class="tp-bar"><span></span><span></span><span></span></div>
+                        <div class="tp-content">
+                            <div class="tp-sidebar">
+                                <div class="tps-item tps-active" style="background:rgba(52,152,219,.2);border-color:rgba(52,152,219,.4)"></div>
+                                <div class="tps-item"></div>
+                                <div class="tps-item"></div>
+                            </div>
+                            <div class="tp-main">
+                                <div class="tp-card" style="border-color:rgba(52,152,219,.3);background:rgba(52,152,219,.1)"></div>
+                                <div class="tp-card" style="border-color:rgba(52,152,219,.2);background:rgba(52,152,219,.06)"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tc-info">
+                        <div class="tc-name">Midnight Sapphire</div>
+                        <div class="tc-desc">Deep blue · Sapphire accents</div>
+                        <div class="tc-swatches">
+                            <span style="background:#050915"></span>
+                            <span style="background:#3498db"></span>
+                            <span style="background:#2980b9"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ 7. PRICING ░░░░░░░░░░░░ -->
+    <section class="pricing" id="pricing">
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag">Pricing</div>
+                <h2 class="section-h2">Simple, honest,<br/><em>riba-free</em></h2>
+                <p class="section-p">No hidden fees. No interest charges. No tricks. Just transparent pricing for every household.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-card" data-reveal>
+                    <div class="pc-plan">Free</div>
+                    <div class="pc-amount">₹0<span>/month</span></div>
+                    <div class="pc-tagline">For individuals getting started</div>
+                    <div class="pc-divider"></div>
+                    <ul class="pc-features">
+                        <li class="pf-yes">Income &amp; Expense tracking</li>
+                        <li class="pf-yes">Zakat Calculator (full)</li>
+                        <li class="pf-yes">Sadaqah Log</li>
+                        <li class="pf-yes">Dual Calendar (Gregorian + Hijri)</li>
+                        <li class="pf-yes">Ramadan Mode</li>
+                        <li class="pf-yes">3 colour themes</li>
+                        <li class="pf-no">Family Hub</li>
+                        <li class="pf-no">Group Expenses</li>
+                        <li class="pf-no">PDF / Word Export</li>
+                        <li class="pf-no">Push Notifications</li>
+                    </ul>
+                    <a href="https://meezan-final.vercel.app/pages/login.html" class="btn-price bp-ghost">Start Free</a>
+                </div>
+
+                <div class="price-card pc-featured" data-reveal data-delay="80">
+                    <div class="pc-badge">✦ Most Popular</div>
+                    <div class="pc-plan">Pro</div>
+                    <div class="pc-amount">₹199<span>/month</span></div>
+                    <div class="pc-tagline">For families and serious planners</div>
+                    <div class="pc-divider"></div>
+                    <ul class="pc-features">
+                        <li class="pf-yes">Everything in Free</li>
+                        <li class="pf-yes">Family Hub (unlimited members)</li>
+                        <li class="pf-yes">Group Expenses (Splitwise-style)</li>
+                        <li class="pf-yes">PDF &amp; Word Export</li>
+                        <li class="pf-yes">Push Notifications (13 types)</li>
+                        <li class="pf-yes">All 4 themes</li>
+                        <li class="pf-yes">Advanced Reports &amp; Charts</li>
+                        <li class="pf-yes">Priority support</li>
+                        <li class="pf-yes">Nisab live price fetch</li>
+                        <li class="pf-yes">Multi-language (20+ languages)</li>
+                    </ul>
+                    <a href="https://meezan-final.vercel.app/pages/login.html" class="btn-price bp-gold">Start Pro Trial</a>
+                </div>
+
+                <div class="price-card" data-reveal data-delay="160">
+                    <div class="pc-plan">Community</div>
+                    <div class="pc-amount">₹999<span>/month</span></div>
+                    <div class="pc-tagline">For masjids &amp; organisations</div>
+                    <div class="pc-divider"></div>
+                    <ul class="pc-features">
+                        <li class="pf-yes">Everything in Pro</li>
+                        <li class="pf-yes">Up to 50 members</li>
+                        <li class="pf-yes">Collective Zakat tracking</li>
+                        <li class="pf-yes">Donation management</li>
+                        <li class="pf-yes">Custom branding</li>
+                        <li class="pf-yes">Dedicated support channel</li>
+                        <li class="pf-yes">API access</li>
+                        <li class="pf-yes">White-label option</li>
+                        <li class="pf-yes">Bulk member import</li>
+                        <li class="pf-yes">Audit reports</li>
+                    </ul>
+                    <a href="mailto:akif@example.com" class="btn-price bp-ghost">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ 8. FAQ ░░░░░░░░░░░░ -->
+    <section class="faq" id="faq">
+        <div class="section-wrap faq-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag">FAQ</div>
+                <h2 class="section-h2">Questions,<br/><em>answered</em></h2>
+            </div>
+
+            <div class="faq-list" id="faq-list">
+                <div class="faq-item" data-reveal>
+                    <button class="faq-q" type="button">
+          Is Meezan truly Shariah-compliant?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>Yes. Meezan is built from the ground up on Islamic finance principles. The Zakat calculator follows scholarly consensus — both gold (87.48g) and silver (612.36g) Nisab standards are supported. No interest-based (riba) calculations
+                            are ever performed. Sadaqah types align with classical Islamic jurisprudence.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="50">
+                    <button class="faq-q" type="button">
+          How is my financial data protected?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>All data is stored in Firebase Firestore with per-user security rules — no one else can read your data. Firebase Auth handles sign-in securely (email/password + Google OAuth). Group data uses top-level Firestore collections with
+                            member-only access rules. Your data is never sold or shared with third parties.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="100">
+                    <button class="faq-q" type="button">
+          What languages does Meezan support?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>Meezan supports 20+ languages including Arabic (full RTL layout flip), Urdu (RTL), Hindi, Tamil, Telugu, Malayalam, Bengali, English, French, Turkish, Malay, and Indonesian. The i18n system uses data-i18n attributes for seamless
+                            switching from the Settings page. Changing to Arabic mirrors the entire layout to RTL.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="150">
+                    <button class="faq-q" type="button">
+          How does the Family Hub work?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>The Family Hub lets the account owner invite members via email or a shareable link. Roles include Owner, Member, and View-only. For shared group expenses (Haj trips, household bills), the Groups page handles Splitwise-style settlement
+                            tracking with real-time Firestore sync. Groups are top-level Firestore collections — not nested under any user — so all members have equal access.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="200">
+                    <button class="faq-q" type="button">
+          Does it work offline or as a mobile app?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>The current version is a fully responsive web app — it works beautifully on mobile browsers at meezan-final.vercel.app. A PWA (Progressive Web App) with offline support and home-screen installation is on the roadmap. A native React
+                            Native / Flutter app is planned as a future feature.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="250">
+                    <button class="faq-q" type="button">
+          When and how does Meezan remind me about Zakat?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>Meezan tracks your Hawl — the one lunar year a Muslim must hold wealth above the Nisab threshold before Zakat becomes due. When your Hawl completes, a notification fires. The Notifications page lets you configure 13 alert types
+                            with custom times, all synchronized to the Hijri calendar. Zakat al-Fitr reminders trigger 3 days before Eid al-Fitr automatically.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ 9. CTA ░░░░░░░░░░░░ -->
+    <section class="cta-section">
+        <div class="cta-bg">
+            <div class="cta-orb cta-orb-l"></div>
+            <div class="cta-orb cta-orb-r"></div>
+            <div class="cta-geo"></div>
+        </div>
+        <div class="cta-inner" data-reveal>
+            <div class="cta-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+            <h2 class="cta-h2">Begin your halal<br/>financial journey today</h2>
+            <p class="cta-p">Join thousands of Muslim households managing their wealth the right way — with faith, clarity, and purpose.</p>
+            <div class="cta-btns">
+                <a href="https://meezan-final.vercel.app/pages/login.html" class="btn-primary">
+                    <span>Create Free Account</span>
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                </a>
+                <a href="https://meezan-final.vercel.app/" class="btn-ghost">View Live App</a>
+            </div>
+            <div class="cta-creator">
+                Built by <a href="https://akif-nehal-portfolio.vercel.app/" target="_blank" rel="noopener">Akif Nehal</a> ·
+                <a href="https://github.com/ANNF570" target="_blank" rel="noopener">GitHub</a> ·
+                <a href="https://www.linkedin.com/in/akif-nehal/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ 10. FOOTER ░░░░░░░░░░░░ -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 60 60" fill="none" style="width:32px;height:32px">
+          <rect x="28" y="26" width="4" height="22" rx="2" fill="url(#fg)"/>
+          <ellipse cx="30" cy="50" rx="13" ry="3.5" fill="url(#fg)"/>
+          <circle cx="30" cy="10" r="3.5" fill="url(#fg)"/>
+          <rect x="9" y="18" width="42" height="3" rx="1.5" fill="url(#fg)"/>
+          <line x1="14" y1="21" x2="11" y2="33" stroke="#d4a017" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <ellipse cx="11" cy="35" rx="7.5" ry="2.8" fill="url(#fg)"/>
+          <line x1="46" y1="21" x2="49" y2="29" stroke="#d4a017" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <ellipse cx="49" cy="31" rx="7.5" ry="2.8" fill="url(#fg)"/>
+          <defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f0c040"/><stop offset="100%" stop-color="#a07010"/></linearGradient></defs>
+        </svg>
+                    <div>
+                        <div class="fl-name">MEEZAN</div>
+                        <div class="fl-ar">ميزان</div>
+                    </div>
+                </div>
+                <p class="footer-tagline">The Scale of Balance — Islamic personal finance for the modern Muslim household.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/ANNF570" target="_blank" rel="noopener" class="fsoc">GitHub</a>
+                    <a href="https://www.linkedin.com/in/akif-nehal/" target="_blank" rel="noopener" class="fsoc">LinkedIn</a>
+                    <a href="https://akif-nehal-portfolio.vercel.app/" target="_blank" rel="noopener" class="fsoc">Portfolio</a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="fl-col">
+                    <div class="fl-title">Product</div>
+                    <a href="#features">Features</a>
+                    <a href="#screens">App Preview</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="https://meezan-final.vercel.app/" target="_blank" rel="noopener">Live App</a>
+                </div>
+                <div class="fl-col">
+                    <div class="fl-title">Islamic Tools</div>
+                    <a href="#islamic">Zakat Calculator</a>
+                    <a href="#islamic">Sadaqah Types</a>
+                    <a href="#islamic">Dual Calendar</a>
+                    <a href="#islamic">Ramadan Mode</a>
+                </div>
+                <div class="fl-col">
+                    <div class="fl-title">Creator</div>
+                    <a href="https://akif-nehal-portfolio.vercel.app/" target="_blank" rel="noopener">Portfolio</a>
+                    <a href="https://github.com/ANNF570" target="_blank" rel="noopener">GitHub (ANNF570)</a>
+                    <a href="https://www.linkedin.com/in/akif-nehal/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="mailto:akif@example.com">Contact</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>© 2026 Meezan · Built with faith by Akif Nehal · جَزَاكَ اللَّهُ خَيْرًا</div>
+            <div class="fb-disclaimer">Financial tools for guidance only. Consult a qualified scholar for binding rulings.</div>
+        </div>
+    </footer>
+
+    <!-- Video Demo Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-box">
+            <button class="modal-close" id="modal-close" type="button">✕</button>
+            <div class="modal-content">
+                <div class="modal-placeholder">
+                    <div class="mp-icon">▶</div>
+                    <div class="mp-text">Demo video coming soon</div>
+                    <div class="mp-sub">Visit <a href="https://meezan-final.vercel.app/" target="_blank" rel="noopener">meezan-final.vercel.app</a> to explore the live app</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
