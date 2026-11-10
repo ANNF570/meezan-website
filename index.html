@@ -4,8 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Meezan — ميزان | Islamic Personal Finance</title>
-    <meta name="description" content="The world's first complete Islamic finance ecosystem. Automatic Zakat, Sadaqah tracking, family hub, and Shariah-compliant budgeting." />
+    <title>Meezan — ميزان | Islamic Personal Finance · Version 2</title>
+    <meta name="description" content="Meezan Version 2 — the advanced Islamic personal-finance app. Automatic Zakat &amp; Sadaqah, 4 account types with net worth, Friends &amp; Loans (amanah), family groups, Eid &amp; Ramadan goals, import/export, rich reports, 21 languages and instant auto-updates. Built by Akif Nehal." />
+    <meta name="author" content="Akif Nehal" />
+    <meta name="theme-color" content="#08090d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Meezan — ميزان · Islamic Personal Finance (Version 2)" />
+    <meta property="og:description" content="Balance wealth &amp; faith: Zakat, Sadaqah, accounts, loans, family groups, 21 languages. Built by Akif Nehal." />
+    <meta property="og:url" content="https://meezan-final.vercel.app/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -17,6 +23,8 @@
     <!-- ░░░░░░░░░░░░ CURSOR ░░░░░░░░░░░░ -->
     <div class="cursor" id="cursor"></div>
     <div class="cursor-trail" id="cursor-trail"></div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <button class="to-top" id="to-top" type="button" aria-label="Back to top">↑</button>
 
     <!-- ░░░░░░░░░░░░ 1. NAV ░░░░░░░░░░░░ -->
     <nav class="nav" id="nav">
@@ -45,6 +53,7 @@
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#v2" class="nav-link">Version 2</a></li>
                 <li><a href="#islamic" class="nav-link">Islamic</a></li>
                 <li><a href="#screens" class="nav-link">Preview</a></li>
                 <li><a href="#pricing" class="nav-link">Pricing</a></li>
@@ -62,11 +71,13 @@
         <!-- Mobile menu -->
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
             <a href="#features">Features</a>
+            <a href="#v2">What's New in V2</a>
             <a href="#islamic">Islamic Finance</a>
             <a href="#screens">App Preview</a>
             <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>
-            <a href="https://meezan-final.vercel.app/pages/login.html" class="mobile-menu-cta">Start Free — دخول</a>
+            <a href="#credits">Credits</a>
+            <a href="https://meezan-final.vercel.app/" class="mobile-menu-cta">Start Free — دخول</a>
         </div>
     </nav>
 
@@ -82,7 +93,7 @@
 
         <div class="hero-content">
             <div class="hero-badge" data-reveal>
-                <span class="badge-dot"></span> The World's First Islamic Finance Ecosystem
+                <span class="badge-dot"></span> Version 2 · Advanced Edition — Now Live
             </div>
 
             <h1 class="hero-h1" data-reveal data-delay="100">
@@ -104,9 +115,9 @@
                     <span>Start for Free</span>
                     <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
                 </a>
-                <a href="#screens" class="btn-ghost">
+                <a href="#v2" class="btn-ghost">
                     <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"/></svg>
-                    <span>Watch Demo</span>
+                    <span>See What's New</span>
                 </a>
             </div>
 
@@ -117,13 +128,13 @@
                 </div>
                 <div class="stat-sep"></div>
                 <div class="stat">
-                    <div class="stat-num" data-count="20" data-suffix="+">0+</div>
+                    <div class="stat-num" data-count="21" data-suffix="">0</div>
                     <div class="stat-lbl">Languages</div>
                 </div>
                 <div class="stat-sep"></div>
                 <div class="stat">
-                    <div class="stat-num" data-count="16" data-suffix="">0</div>
-                    <div class="stat-lbl">App Screens</div>
+                    <div class="stat-num" data-count="22" data-suffix="+">0+</div>
+                    <div class="stat-lbl">Tools &amp; Screens</div>
                 </div>
                 <div class="stat-sep"></div>
                 <div class="stat">
@@ -237,7 +248,7 @@
                 <div class="trust-sep">·</div>
                 <div class="trust-item">📄 jsPDF</div>
                 <div class="trust-sep">·</div>
-                <div class="trust-item">🌍 i18n 20+</div>
+                <div class="trust-item">🌍 21 Languages · PWA</div>
                 <div class="trust-sep">·</div>
                 <div class="trust-item">🚀 Vercel</div>
             </div>
@@ -336,6 +347,209 @@
     </section>
 
     <!-- ░░░░░░░░░░░░ 4. ISLAMIC FINANCE ░░░░░░░░░░░░ -->
+        <!-- ░░░░░░░░░░░░ V2 WHAT'S NEW ░░░░░░░░░░░░ -->
+    <section class="v2" id="v2">
+        <div class="v2-orb v2-orb-a" data-parallax="0.12"></div>
+        <div class="v2-orb v2-orb-b" data-parallax="-0.1"></div>
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag">Version 2 · Advanced</div>
+                <h2 class="section-h2">Everything you asked for,<br/><em>and more</em></h2>
+                <p class="section-p">Same login, same data, same Firebase — rebuilt to be faster, clearer and far more capable.</p>
+            </div>
+            <div class="v2-strip" data-reveal>
+                <div><b data-count="12">0</b><span>Pages</span></div>
+                <div><b data-count="21">0</b><span>Languages</span></div>
+                <div><b data-count="4">0</b><span>Account types</span></div>
+                <div><b data-count="2.5" data-suffix="%">0%</b><span>Charity goal</span></div>
+                <div><b data-count="0" data-suffix=" riba">0 riba</b><span>Interest ever</span></div>
+            </div>
+            <div class="v2-grid">
+                <article class="v2-card tilt" data-reveal="left" data-delay="0">
+                    <div class="v2-ic">🏦</div>
+                    <h3>4 Account Types</h3>
+                    <p>Cash, Bank, UPI and Wallet each get their own live balance — plus Assets and total Net worth on the dashboard. Income and expenses update them automatically.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="up" data-delay="90">
+                    <div class="v2-ic">🤝</div>
+                    <h3>Friends &amp; Loans</h3>
+                    <p>Money a friend gave you to keep, or money you lent. Record given / returned as cash or online, edit mistakes, mark complete.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="up" data-delay="180">
+                    <div class="v2-ic">🕌</div>
+                    <h3>Zakat + Sadaqah, Together</h3>
+                    <p>One page for your Zakat calculation and every Sadaqah. Receivables add, held amanah is deducted — automatically.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="right" data-delay="0">
+                    <div class="v2-ic">⚠️</div>
+                    <h3>Charity Goal Warnings</h3>
+                    <p>A 2.5% giving goal for the month and overall, with gentle warnings when you fall behind.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="left" data-delay="90">
+                    <div class="v2-ic">🌙</div>
+                    <h3>Eid &amp; Ramadan Goals</h3>
+                    <p>Save for Eid shopping, Fitr and Fidya, with progress bars per goal and per month.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="up" data-delay="180">
+                    <div class="v2-ic">📈</div>
+                    <h3>Richer Reports</h3>
+                    <p>Donut, area, gauge and bar charts: category split, monthly trend, savings rate, giving ratio and more.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="up" data-delay="0">
+                    <div class="v2-ic">📥</div>
+                    <h3>Import &amp; Export</h3>
+                    <p>Restore a full JSON backup, import CSV rows, export CSV, JSON or PDF. Old IDs are preserved.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="right" data-delay="90">
+                    <div class="v2-ic">👨‍👩‍👧</div>
+                    <h3>Family Groups</h3>
+                    <p>Shared expenses with splits, payments, settle-up and roles — Owner, Member and View-only.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="left" data-delay="180">
+                    <div class="v2-ic">✏️</div>
+                    <h3>Edit &amp; Delete Anywhere</h3>
+                    <p>Every record can be corrected — with 10-per-page history, a weekly slider and instant totals.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="up" data-delay="0">
+                    <div class="v2-ic">📅</div>
+                    <h3>Calendar &amp; Calculator</h3>
+                    <p>Gregorian + Hijri calendar and a built-in calculator in Settings, with profile and giving preferences.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="up" data-delay="90">
+                    <div class="v2-ic">🌍</div>
+                    <h3>21 Languages</h3>
+                    <p>Including Arabic, Urdu and Persian with full right-to-left layout. Switch any time.</p>
+                </article>
+                <article class="v2-card tilt" data-reveal="right" data-delay="180">
+                    <div class="v2-ic">🔄</div>
+                    <h3>Instant Auto-Update</h3>
+                    <p>Installed on phone or laptop? Updates appear as a one-tap “Update now” toast.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ ACCOUNTS ░░░░░░░░░░░░ -->
+    <section class="acc" id="accounts">
+        <div class="section-wrap acc-wrap">
+            <div class="acc-text" data-reveal="left">
+                <div class="section-tag">Accounts &amp; Net worth</div>
+                <h2 class="section-h2">Know exactly where<br/><em>every rupee sits</em></h2>
+                <p class="section-p" style="text-align:left;margin:0 0 1.2rem">Enter your opening balances once. From then on every income, expense, transfer and loan moves the right account — no double entry.</p>
+                <ul class="tick">
+                    <li>Cash · Bank · UPI · Wallet balances</li>
+                    <li>Transfers between accounts</li>
+                    <li>Assets &amp; Net worth, loans included</li>
+                    <li>Link old v1 records to an account in one tap</li>
+                </ul>
+            </div>
+            <div class="acc-panel" data-reveal="right">
+                <div class="acc-row"><span class="acc-n">💵 Cash</span><div class="bar"><i style="--w:32%"></i></div><span class="acc-v">₹12,400</span></div>
+                <div class="acc-row"><span class="acc-n">🏛️ Bank</span><div class="bar"><i style="--w:78%"></i></div><span class="acc-v">₹84,250</span></div>
+                <div class="acc-row"><span class="acc-n">📲 UPI</span><div class="bar"><i style="--w:45%"></i></div><span class="acc-v">₹18,900</span></div>
+                <div class="acc-row"><span class="acc-n">👛 Wallet</span><div class="bar"><i style="--w:18%"></i></div><span class="acc-v">₹3,150</span></div>
+                <div class="acc-total"><span>Net worth</span><b data-count="118700" data-prefix="₹">₹0</b></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ LOANS ░░░░░░░░░░░░ -->
+    <section class="loans" id="loans">
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag">Friends &amp; Loans</div>
+                <h2 class="section-h2">Amanah, tracked with<br/><em>complete clarity</em></h2>
+                <p class="section-p">Money from a friend is a trust. Keep every given and returned amount separate from your income and expenses.</p>
+            </div>
+            <div class="tl" id="tl">
+                <div class="tl-line"><i id="tl-fill"></i></div>
+                <div class="tl-step " data-reveal="left">
+                    <div class="tl-dot">1</div>
+                    <div class="tl-card"><h3>Record</h3><p>A friend hands you ₹10,000 to keep, or you lend ₹5,000. Choose held or lent.</p></div>
+                </div>
+                <div class="tl-step tl-r" data-reveal="right">
+                    <div class="tl-dot">2</div>
+                    <div class="tl-card"><h3>Return or give back</h3><p>Add each return as cash or online from the same page. Partial payments welcome.</p><div class="bar"><i style="--w:60%"></i></div><small>₹6,000 of ₹10,000 returned</small></div>
+                </div>
+                <div class="tl-step " data-reveal="left">
+                    <div class="tl-dot">3</div>
+                    <div class="tl-card"><h3>Fix mistakes</h3><p>Wrong amount or date? Edit any entry. Balances and Zakat recompute instantly.</p></div>
+                </div>
+                <div class="tl-step tl-r" data-reveal="right">
+                    <div class="tl-dot">4</div>
+                    <div class="tl-card"><h3>Mark complete</h3><p>When the outstanding reaches zero, the loan is completed automatically.</p><span class="pill-ok">✓ Completed</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ REPORTS ░░░░░░░░░░░░ -->
+    <section class="rep" id="reports">
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag">Reports &amp; Dashboard</div>
+                <h2 class="section-h2">Charts that<br/><em>tell the story</em></h2>
+            </div>
+            <div class="rep-grid">
+                <div class="rep-card" data-reveal="up">
+                    <h4>Spending split</h4>
+                    <div class="donut" style="--a:38;--b:27;--c:20"><span>₹42k</span></div>
+                    <div class="legend"><i class="l1"></i>Home <i class="l2"></i>Food <i class="l3"></i>Charity</div>
+                </div>
+                <div class="rep-card" data-reveal="up" data-delay="100">
+                    <h4>Monthly trend</h4>
+                    <svg class="line-svg" viewBox="0 0 200 90" preserveAspectRatio="none"><path class="area" d="M0 80 L25 62 L50 70 L75 40 L100 48 L125 28 L150 36 L175 14 L200 20 L200 90 L0 90Z"/><path class="ln" d="M0 80 L25 62 L50 70 L75 40 L100 48 L125 28 L150 36 L175 14 L200 20" pathLength="1"/></svg>
+                </div>
+                <div class="rep-card" data-reveal="up" data-delay="200">
+                    <h4>Monthly bars</h4>
+                    <div class="mbars">
+                        <i style="--h:40%;--i:0"></i>
+                        <i style="--h:62%;--i:1"></i>
+                        <i style="--h:48%;--i:2"></i>
+                        <i style="--h:75%;--i:3"></i>
+                        <i style="--h:58%;--i:4"></i>
+                        <i style="--h:88%;--i:5"></i>
+                    </div>
+                </div>
+                <div class="rep-card" data-reveal="up" data-delay="300">
+                    <h4>Charity goal</h4>
+                    <div class="gauge"><svg viewBox="0 0 120 70"><path class="g-bg" d="M10 60 A50 50 0 0 1 110 60" pathLength="1"/><path class="g-fg" d="M10 60 A50 50 0 0 1 110 60" pathLength="1"/></svg><b data-count="2.5" data-suffix="%">0%</b></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ LANGUAGES ░░░░░░░░░░░░ -->
+    <section class="langs" id="languages">
+        <div class="section-head" data-reveal>
+            <div class="section-tag">21 Languages</div>
+            <h2 class="section-h2">Speak your<br/><em>own language</em></h2>
+        </div>
+        <div class="marq " aria-hidden="true"><div class="marq-t"><span>🇬🇧 English</span><span>🇸🇦 العربية</span><span>🇵🇰 اردو</span><span>🇮🇷 فارسی</span><span>🇮🇳 हिन्दी</span><span>🇮🇳 తెలుగు</span><span>🇮🇳 தமிழ்</span><span>🇮🇳 മലയാളം</span><span>🇧🇩 বাংলা</span><span>🇲🇾 Melayu</span><span>🇮🇩 Bahasa</span><span>🇬🇧 English</span><span>🇸🇦 العربية</span><span>🇵🇰 اردو</span><span>🇮🇷 فارسی</span><span>🇮🇳 हिन्दी</span><span>🇮🇳 తెలుగు</span><span>🇮🇳 தமிழ்</span><span>🇮🇳 മലയാളം</span><span>🇧🇩 বাংলা</span><span>🇲🇾 Melayu</span><span>🇮🇩 Bahasa</span></div></div>
+        <div class="marq marq-r" aria-hidden="true"><div class="marq-t"><span>🇹🇷 Türkçe</span><span>🇫🇷 Français</span><span>🇩🇪 Deutsch</span><span>🇪🇸 Español</span><span>🇮🇹 Italiano</span><span>🇵🇹 Português</span><span>🇷🇺 Русский</span><span>🇯🇵 日本語</span><span>🇨🇳 中文</span><span>🇬🇷 Ελληνικά</span><span>🇬🇧 English</span><span>🇸🇦 العربية</span><span>🇹🇷 Türkçe</span><span>🇫🇷 Français</span><span>🇩🇪 Deutsch</span><span>🇪🇸 Español</span><span>🇮🇹 Italiano</span><span>🇵🇹 Português</span><span>🇷🇺 Русский</span><span>🇯🇵 日本語</span><span>🇨🇳 中文</span><span>🇬🇷 Ελληνικά</span><span>🇬🇧 English</span><span>🇸🇦 العربية</span></div></div>
+        <p class="lang-note" data-reveal>Arabic, Urdu and Persian switch the whole app to right-to-left automatically.</p>
+    </section>
+
+    <!-- ░░░░░░░░░░░░ EVERYWHERE ░░░░░░░░░░░░ -->
+    <section class="evr" id="everywhere">
+        <div class="section-wrap">
+            <div class="section-head" data-reveal>
+                <div class="section-tag">Every device · Always current</div>
+                <h2 class="section-h2">Phone, tablet, foldable<br/><em>or laptop</em></h2>
+                <p class="section-p">Installable like an app, responsive down to flip phones, with a permanent sidebar on every screen.</p>
+            </div>
+            <div class="evr-grid">
+                <div class="evr-dev" data-reveal="zoom"><div class="d-phone"></div><span>Phone</span></div>
+                <div class="evr-dev" data-reveal="zoom" data-delay="100"><div class="d-fold"></div><span>Foldable</span></div>
+                <div class="evr-dev" data-reveal="zoom" data-delay="200"><div class="d-tab"></div><span>Tablet</span></div>
+                <div class="evr-dev" data-reveal="zoom" data-delay="300"><div class="d-lap"></div><span>Laptop</span></div>
+            </div>
+            <div class="toast-demo" data-reveal="up">
+                <span>🔄 A new version of Meezan is ready</span><button type="button" tabindex="-1">Update now</button>
+            </div>
+        </div>
+    </section>
+
     <section class="islamic" id="islamic">
         <div class="section-wrap">
             <div class="section-head" data-reveal>
@@ -732,6 +946,8 @@
                     <div class="pc-divider"></div>
                     <ul class="pc-features">
                         <li class="pf-yes">Income &amp; Expense tracking</li>
+                        <li class="pf-yes">4 account types + Net worth</li>
+                        <li class="pf-yes">Friends &amp; Loans tracker</li>
                         <li class="pf-yes">Zakat Calculator (full)</li>
                         <li class="pf-yes">Sadaqah Log</li>
                         <li class="pf-yes">Dual Calendar (Gregorian + Hijri)</li>
@@ -739,10 +955,10 @@
                         <li class="pf-yes">3 colour themes</li>
                         <li class="pf-no">Family Hub</li>
                         <li class="pf-no">Group Expenses</li>
-                        <li class="pf-no">PDF / Word Export</li>
+                        <li class="pf-no">PDF Export</li>
                         <li class="pf-no">Push Notifications</li>
                     </ul>
-                    <a href="https://meezan-final.vercel.app/pages/login.html" class="btn-price bp-ghost">Start Free</a>
+                    <a href="https://meezan-final.vercel.app/" class="btn-price bp-ghost">Start Free</a>
                 </div>
 
                 <div class="price-card pc-featured" data-reveal data-delay="80">
@@ -755,15 +971,15 @@
                         <li class="pf-yes">Everything in Free</li>
                         <li class="pf-yes">Family Hub (unlimited members)</li>
                         <li class="pf-yes">Group Expenses (Splitwise-style)</li>
-                        <li class="pf-yes">PDF &amp; Word Export</li>
+                        <li class="pf-yes">PDF / CSV / JSON Export &amp; Import</li>
                         <li class="pf-yes">Push Notifications (13 types)</li>
                         <li class="pf-yes">All 4 themes</li>
                         <li class="pf-yes">Advanced Reports &amp; Charts</li>
                         <li class="pf-yes">Priority support</li>
                         <li class="pf-yes">Nisab live price fetch</li>
-                        <li class="pf-yes">Multi-language (20+ languages)</li>
+                        <li class="pf-yes">Multi-language (21 languages, RTL)</li>
                     </ul>
-                    <a href="https://meezan-final.vercel.app/pages/login.html" class="btn-price bp-gold">Start Pro Trial</a>
+                    <a href="https://meezan-final.vercel.app/" class="btn-price bp-gold">Start Pro Trial</a>
                 </div>
 
                 <div class="price-card" data-reveal data-delay="160">
@@ -798,6 +1014,56 @@
             </div>
 
             <div class="faq-list" id="faq-list">
+                <div class="faq-item" data-reveal data-delay="0">
+                    <button class="faq-q" type="button">
+          What is new in Meezan Version 2?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>Version 2 adds four account types (Cash, Bank, UPI, Wallet) with Assets and live Net worth, a Friends &amp; Loans page for money you hold or lend, charity-goal warnings, combined Zakat &amp; Sadaqah, Eid &amp; Ramadan goals, Reports, Import/Export, 21 languages and automatic updates.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="40">
+                    <button class="faq-q" type="button">
+          Will my old Version 1 data still work?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>Yes. Version 2 uses the same Firebase project and the same login, so you sign in with the same account and all income, expenses, Zakat and family records appear. You can also restore a JSON backup from the Import page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="80">
+                    <button class="faq-q" type="button">
+          How do Friends &amp; Loans work?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>When a friend gives you money to keep, record it as <em>held</em>; when you give money, record it as <em>lent</em>. Add each return as cash or online, edit mistakes, and mark it complete. Held money is deducted from your Zakat and net worth, lent money is counted as receivable.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="120">
+                    <button class="faq-q" type="button">
+          How do updates reach my phone and laptop?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>Meezan is an installable PWA. When a new version is published, installed copies detect it automatically and show an <em>Update now</em> toast — no reinstall needed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="160">
+                    <button class="faq-q" type="button">
+          Which languages are supported?
+          <span class="faq-icon">＋</span>
+        </button>
+                    <div class="faq-a">
+                        <p>21 languages including Arabic, Urdu, Persian (right-to-left), Hindi, Telugu, Tamil, Malayalam, Bengali, Malay, Indonesian, Turkish, French, German, Spanish, Italian, Portuguese, Russian, Japanese, Chinese and Greek. Switch any time in Settings.</p>
+                    </div>
+                </div>
+
                 <div class="faq-item" data-reveal>
                     <button class="faq-q" type="button">
           Is Meezan truly Shariah-compliant?
@@ -879,7 +1145,7 @@
             <h2 class="cta-h2">Begin your halal<br/>financial journey today</h2>
             <p class="cta-p">Join thousands of Muslim households managing their wealth the right way — with faith, clarity, and purpose.</p>
             <div class="cta-btns">
-                <a href="https://meezan-final.vercel.app/pages/login.html" class="btn-primary">
+                <a href="https://meezan-final.vercel.app/" class="btn-primary">
                     <span>Create Free Account</span>
                     <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
                 </a>
@@ -894,6 +1160,25 @@
     </section>
 
     <!-- ░░░░░░░░░░░░ 10. FOOTER ░░░░░░░░░░░░ -->
+        <!-- ░░░░░░░░░░░░ CREDITS ░░░░░░░░░░░░ -->
+    <section class="credits" id="credits">
+        <div class="section-wrap">
+            <div class="cred-card" data-reveal="zoom">
+                <div class="cred-ar">جَزَاكَ اللَّهُ خَيْرًا</div>
+                <div class="section-tag">Credits</div>
+                <h2 class="section-h2" style="font-size:clamp(26px,4vw,40px)">Designed &amp; built by<br/><em>Akif Nehal</em></h2>
+                <p class="section-p">Student at BIHER, building tools that help Muslim households balance wealth and faith. Meezan Version 2 is crafted with Firebase, vanilla JavaScript and a lot of du'a.</p>
+                <div class="cred-links">
+                    <a href="https://www.linkedin.com/in/akif-nehal/" target="_blank" rel="noopener" class="btn-primary"><span>LinkedIn</span></a>
+                    <a href="https://github.com/ANNF570" target="_blank" rel="noopener" class="btn-ghost"><span>GitHub · ANNF570</span></a>
+                    <a href="https://akif-nehal-portfolio.vercel.app/" target="_blank" rel="noopener" class="btn-ghost"><span>Portfolio</span></a>
+                    <a href="https://meezan-final.vercel.app/" target="_blank" rel="noopener" class="btn-ghost"><span>Open the App</span></a>
+                </div>
+                <div class="cred-built">Built with · Firebase Auth &amp; Firestore · Vanilla JS · Vercel · Service Worker PWA</div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-inner">
             <div class="footer-brand">
@@ -927,6 +1212,7 @@
                     <div class="fl-title">Product</div>
                     <a href="#features">Features</a>
                     <a href="#screens">App Preview</a>
+                    <a href="#v2">What's New (V2)</a>
                     <a href="#pricing">Pricing</a>
                     <a href="https://meezan-final.vercel.app/" target="_blank" rel="noopener">Live App</a>
                 </div>
@@ -948,7 +1234,7 @@
         </div>
 
         <div class="footer-bottom">
-            <div>© 2026 Meezan · Built with faith by Akif Nehal · جَزَاكَ اللَّهُ خَيْرًا</div>
+            <div>© 2026 Meezan Version 2 · Designed &amp; built with faith by <a href="https://www.linkedin.com/in/akif-nehal/" target="_blank" rel="noopener">Akif Nehal</a> · جَزَاكَ اللَّهُ خَيْرًا</div>
             <div class="fb-disclaimer">Financial tools for guidance only. Consult a qualified scholar for binding rulings.</div>
         </div>
     </footer>

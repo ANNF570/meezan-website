@@ -157,6 +157,7 @@
 (function () {
   const nums = document.querySelectorAll('[data-count]');
   if (!nums.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { nums.forEach(function (n) { n.textContent = (n.dataset.prefix || '') + Number(n.dataset.count).toLocaleString('en-IN') + (n.dataset.suffix || ''); }); return; }
 
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -172,7 +173,8 @@
       const id = setInterval(() => {
         cur += inc;
         if (cur >= target) { cur = target; clearInterval(id); }
-        el.textContent = (target % 1 !== 0 ? cur.toFixed(1) : Math.floor(cur)) + suffix;
+        const num = (target % 1 !== 0 ? cur.toFixed(1) : Math.floor(cur).toLocaleString('en-IN'));
+        el.textContent = (el.dataset.prefix || '') + num + suffix;
       }, step);
 
       io.unobserve(el);
@@ -321,3 +323,55 @@
 
 console.log('%c⚖️ MEEZAN — ميزان', 'font-family:serif;font-size:22px;color:#d4a017;');
 console.log('%cBuilt by Akif Nehal · https://akif-nehal-portfolio.vercel.app/', 'color:#9aa4af;font-size:12px');
+
+
+/* ── 16. V2 ENHANCEMENTS: progress bar, back-to-top, parallax, tilt, timeline ── */
+(function () {
+  const bar = document.getElementById('scroll-progress');
+  const top = document.getElementById('to-top');
+  const tlFill = document.getElementById('tl-fill');
+  const tl = document.getElementById('tl');
+  const orbs = document.querySelectorAll('[data-parallax]');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let ticking = false;
+
+  function update() {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const y = window.scrollY;
+    if (bar) { bar.style.transform = 'scaleX(' + (h > 0 ? y / h : 0) + ')'; }
+    if (top) { top.classList.toggle('show', y > 700); }
+    if (tl && tlFill) {
+      const r = tl.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (window.innerHeight * 0.6 - r.top) / r.height));
+      tlFill.style.height = (p * 100) + '%';
+    }
+    if (!reduce) {
+      orbs.forEach(function (o) {
+        const r = o.parentElement.getBoundingClientRect();
+        o.style.transform = 'translate3d(0,' + (r.top * parseFloat(o.dataset.parallax)) + 'px,0)';
+      });
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+
+  if (top) {
+    top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+  }
+
+  if (!reduce && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.tilt').forEach(function (c) {
+      c.addEventListener('mousemove', function (e) {
+        const r = c.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        c.style.transform = 'perspective(700px) rotateX(' + (-y * 7) + 'deg) rotateY(' + (x * 9) + 'deg) translateY(-4px)';
+      });
+      c.addEventListener('mouseleave', function () { c.style.transform = ''; });
+    });
+  }
+})();
